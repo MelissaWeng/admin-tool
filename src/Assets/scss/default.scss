@@ -1,0 +1,91 @@
+.body{
+  font-size: 18px;
+  font-family: 'Lato', sans-serif;
+  color: #525252;
+}
+
+
+.container {
+  width: 100%;
+  height: 100%;
+  float: left;
+  overflow: hidden; 
+  font-family: 'Lato', sans-serif;
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 18px;
+
+  .login {
+    display: table;
+    margin: 200px auto;
+  }
+
+  .contents {
+    margin-left: 135px;
+    background-color: white;
+
+    .link {
+      font-weight: bold;
+      font-size: 16 px;
+      color: #0a8542;
+    }
+
+    .inputSearch {
+      float: right;
+      font-size: 18px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: white;
+      background-image: url('../images/search-icon.png');
+      background-position: 12px 12px; 
+      background-repeat: no-repeat;
+      padding: 12px 20px 12px 60px;
+      outline: none;
+    }
+
+  }
+
+
+  .navigation{
+    background-color: #525252;
+    float: left;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    
+    ul {
+      margin: 0;
+      padding: 0;
+      width: 135px;     
+      list-style-type: none;
+      
+      li {
+        text-align: center;             
+        
+        a {
+          line-height: 135px;
+          display: block;
+          color: white;
+          border-bottom: solid #3E3E3E 1px;
+          box-shadow: 0px 1px 1px grey;
+
+          &:hover{
+            background-color: #0a8542;
+            text-decoration: none;
+          }
+          
+        }
+        .selected{
+          background-color: #ffa900;
+          }
+
+    }
+    }
+  }
+  
+}
+
+
+
