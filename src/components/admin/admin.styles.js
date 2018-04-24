@@ -27,7 +27,46 @@ const styles = {
     marginRight: 20,
     width: 150,
     borderRadius: 25,
-    fontSize: 13
+    fontSize: 13,
+    boxShadow: 'none'
+  },
+  confirmButton:{
+    width: 280,
+    height: 40,
+    borderRadius: 25,
+    fontSize: 16,
+    boxShadow: 'none',
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto'
+  },
+  secondaryButton:{
+    float: 'left',
+    marginTop: 18,
+    marginLeft: 65,
+    width: 180,
+    borderRadius: 25,
+    borderStyle: 'solid',
+    borderWidth: 1,
+    borderColor: '#00B2F4',
+    fontSize: 10,
+    boxShadow: 'none'
+  },
+  secondaryButtonShort:{
+    float: 'left',
+    marginTop: 18,
+    width: 150,
+    borderRadius: 25,
+    borderStyle: 'solid',
+    borderWidth: 1,
+    borderColor: '#00B2F4',
+    fontSize: 10,
+    boxShadow: 'none'
+  },
+  secondaryButtonText:{
+    color: '#00B2F4', 
+    fontSize: 12,
+    textTransform: 'none'
   }
   
 };

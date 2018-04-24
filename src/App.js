@@ -6,7 +6,6 @@ import {
   Link,
   Switch
 } from 'react-router-dom';
-import Header from './components/header/header';
 import Navigation from './components/navigation/navigation';
 import Admin from './components/admin/admin';
 import Errors from './components/errors/errors';
@@ -15,9 +14,6 @@ import Login from './components/login/login';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-
-import {Redirect} from 'react-router-dom';
-import { browserHistory } from 'react-router';
 
 const muiTheme = getMuiTheme({
   fontFamily: "'Lato', sans-serif"
@@ -32,9 +28,11 @@ class App extends React.Component {
       loggedIn: false
     };
   }
+  
 
   render() {
       return (
+        
         <Router>
           
           <div>

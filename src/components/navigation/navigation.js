@@ -19,12 +19,12 @@ class Navigation extends React.Component {
         <li>
           <Link to="/"><img src={require('./images/admin.png')} /></Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/import"><img src={require('./images/import.png')} /></Link>
         </li>
         <li>
           <Link to="/errors"><img src={require('./images/error.png')} /></Link>
-        </li>
+        </li> */}
         <li>
           <Link to="/login"><img src={require('./images/log-out.png')} /></Link>
         </li>
