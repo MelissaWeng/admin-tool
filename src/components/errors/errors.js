@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import Table, { TableBody, TableCell, TableHeader, TableRow, TableHeaderColumn, TableRowColumn} from 'material-ui/Table';
+import React from 'react';
+import Table, { TableBody, TableHeader, TableRow, TableHeaderColumn, TableRowColumn} from 'material-ui/Table';
 //import DropDownMenu from 'material-ui/DropDownMenu';
 //import MenuItem from 'material-ui/MenuItem';
 //import SearchBar from 'material-ui-search-bar';

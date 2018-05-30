@@ -1,6 +1,6 @@
-'use strict';
+//'use strict';
 
-import {StyleSheet} from 'react';
+//import {StyleSheet} from 'react';
 
 const styles = {
   table_header_name: {

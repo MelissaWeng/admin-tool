@@ -1,6 +1,6 @@
-'use strict';
+//'use strict';
 
-import {StyleSheet} from 'react';
+//import {StyleSheet} from 'react';
 
 const styles = {
   ingress: {
@@ -15,16 +15,25 @@ const styles = {
     marginTop: 0
   },
   checkbox:{
-    marginRight: 50,
+    marginRight: 40,
     marginTop: 20,
     float: 'left',
-    width: 100,
-    color: '#525252'
+    width: 70,
+    color: '#525252',
+    fontSize: 14
+  },
+  checkboxLong:{
+    marginRight: 0,
+    marginTop: 20,
+    float: 'left',
+    width: 190,
+    color: '#525252',
+    fontSize: 14
   },
   button:{
     float: 'left',
     marginTop: 30,
-    marginRight: 20,
+    marginRight: 40,
     width: 150,
     borderRadius: 25,
     fontSize: 13,
@@ -43,7 +52,7 @@ const styles = {
   secondaryButton:{
     float: 'left',
     marginTop: 18,
-    marginLeft: 65,
+    marginLeft: 25,
     width: 180,
     borderRadius: 25,
     borderStyle: 'solid',

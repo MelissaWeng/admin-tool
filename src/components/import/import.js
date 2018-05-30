@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Divider from 'material-ui/Divider';
 import {List, ListItem} from 'material-ui/List';
 import styles from './import.styles';
@@ -14,7 +14,7 @@ class Import extends React.Component {
       <div className="container">
         
         <div className="contents">
-          <div style={{height: '135px', width: '100%', height: '100%'}}>
+          <div style={{height: '135px', width: '100%'}}>
             
               <List style={{paddingTop: 0}}>
                 <ListItem primaryText="Lisää käyttäjiä massana" style={styles.listItem}/>

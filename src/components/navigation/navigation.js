@@ -1,8 +1,4 @@
-import React, { Component } from 'react';
-import Admin from '../admin/admin'
-import Errors from '../errors/errors';
-import Import from '../import/import';
-import Login from '../login/login';
+import React from 'react';
 import {Link} from 'react-router-dom';
 
 
@@ -17,24 +13,17 @@ class Navigation extends React.Component {
     <nav className="navigation">
       <ul>
         <li>
-          <Link to="/"><img src={require('./images/admin.png')} /></Link>
+          <Link to="/"><img src={require('./images/admin.png')} alt="admin"/></Link>
         </li>
         {/* <li>
-          <Link to="/import"><img src={require('./images/import.png')} /></Link>
+          <Link to="/import"><img src={require('./images/import.png') alt="import"} /></Link>
         </li>
         <li>
-          <Link to="/errors"><img src={require('./images/error.png')} /></Link>
+          <Link to="/errors"><img src={require('./images/error.png') alt="error"} /></Link>
         </li> */}
         <li>
-          <Link to="/login"><img src={require('./images/log-out.png')} /></Link>
+          <Link to="/login"><img src={require('./images/log-out.png')} alt="logout"/></Link>
         </li>
-
-        {/* <li>
-          <a href="#"><img src={require('./images/admin.png')} /></a>
-          <a href="../import/import"><img src={require('./images/import.png')} /></a>
-          <a href="../errors/errors"><img src={require('./images/error.png')} /></a>
-          <a href="../login/login"><img src={require('./images/log-out.png')} /></a>
-        </li> */}
       </ul>
     </nav> 
 

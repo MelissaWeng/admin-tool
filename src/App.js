@@ -1,12 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Assets/css/default.min.css';
 import {
   BrowserRouter as Router,
-  Route,
-  Link,
-  Switch
+  Route
 } from 'react-router-dom';
-import Navigation from './components/navigation/navigation';
+//import Navigation from './components/navigation/navigation';
 import Admin from './components/admin/admin';
 import Errors from './components/errors/errors';
 import Import from './components/import/import';
@@ -16,9 +14,20 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 const muiTheme = getMuiTheme({
-  fontFamily: "'Lato', sans-serif"
-}
-);
+  fontFamily: "'Lato', sans-serif",
+  datePicker: {
+    color: '#0A8542',
+    textColor: '#ffffff',
+    calendarTextColor: '#2b2b2b',
+    selectColor: '#0A8542',
+    selectTextColor: '#ffffff',
+    calendarYearBackgroundColor: '#0A8542',
+    headerColor: '#0A8542',
+  },
+  flatButton: {
+    primaryTextColor: '#0A8542', 
+  }
+});
 
 
 class App extends React.Component {

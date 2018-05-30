@@ -1,6 +1,8 @@
+import jwt_decode from 'jwt-decode';
+
 export function logout() {
   clearIdToken();
-  clearAccessToken();
+  //clearAccessToken();
   this.props.history.push('/login');
 }
 
@@ -22,15 +24,17 @@ export function logout() {
 } */
 
 export function getIdToken() {
-  //return localStorage.getItem(ID_TOKEN_KEY);
+  var token = '';
+  return token = localStorage.getItem('id_token');
+  console.log('Local Storage Get Id Token: '+token);
 }
 
 export function getAccessToken() {
   //return localStorage.getItem(ACCESS_TOKEN_KEY);
 }
 
-function clearIdToken() {
-  //localStorage.removeItem(ID_TOKEN_KEY);
+export function clearIdToken() {
+  localStorage.removeItem('id_token');
 }
 
 function clearAccessToken() {
@@ -43,8 +47,9 @@ export function setAccessToken(access_token) {
 }
 
 // Get and store id_token in local storage, id_token is the JWT token
-export function setIdToken(id_token) {
-  //localStorage.setItem(ID_TOKEN_KEY, id_token);
+export function setIdToken(token) {
+  localStorage.setItem('id_token', token);
+  console.log('Local Storage Set Id Token: '+token);
 }
 
 export function isLoggedIn() {
@@ -53,18 +58,17 @@ export function isLoggedIn() {
 }
 
 function getTokenExpirationDate(encodedToken) {
-  const token = decode(encodedToken);
+  const token = jwt_decode(encodedToken);
   if (!token.exp) { 
     return null; 
   }
-
   const date = new Date(0);
   date.setUTCSeconds(token.exp);
-
+  console.log("token expiring date: "+date);
   return date;
 }
 
 function isTokenExpired(token) {
   const expirationDate = getTokenExpirationDate(token);
   return expirationDate < new Date();
-}
+} 
