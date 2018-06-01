@@ -122,6 +122,7 @@ class Admin extends React.Component {
       isAllDivisions: false,
       allChains: [{}],
       allUnits: [{}],
+      originalUnits: [{}],
       divisionInfo: [{}]
     };
   }
@@ -182,7 +183,8 @@ class Admin extends React.Component {
           }
           this.setState({allChains: this.state.allChains.filter(onlyUnique).slice(1).sort()});
           this.setState({allUnits: this.state.allUnits.filter(onlyUnique).slice(1).sort()});
-          this.setState({divisionInfo: divisionInfo})
+          this.setState({divisionInfo: divisionInfo});
+          this.setState({originalUnits: this.state.allUnits});
           console.log(this.state.divisionInfo);
           console.log(this.state.allChains);
           console.log(this.state.allUnits);
@@ -399,6 +401,21 @@ class Admin extends React.Component {
     }
   }
 
+  getUnits(chain){
+    let newUnits = [{}];
+    var index = '';
+    this.state.divisionInfo.forEach(function(item){
+      if(chain === item.chain){
+         //console.log(item.unit);
+         newUnits.push(item.unit);
+      }
+    });
+    //console.log(newUnits.slice(1).sort());
+    //this.setState({allUnits: newUnits});
+    this.state.allUnits = newUnits.slice(1).sort();
+    //console.log(this.state.allUnits);
+  }
+
   //handle value changes
   updateCheckP(event, isChecked, value){
     this.setState({pChecked: isChecked, roleChanged: true});
@@ -517,7 +534,8 @@ class Admin extends React.Component {
       errorTextLastName: '',
       errorTextPhone: '',
       errorTextChain: '',
-      errorTextUnit: ''
+      errorTextUnit: '',
+      allUnits: this.state.originalUnits
     })
   }
 
@@ -582,7 +600,15 @@ class Admin extends React.Component {
     //this.getUsers();
   }
 
-  changeChain = (event, index, chainValue) => this.setState({collapseOnChange: false, chainValue: chainValue, chainChanged: true});
+  selectChain = (event, index, chainValue) => {
+    this.setState({chainValue: chainValue, errorTextChain: ''});
+    this.getUnits(chainValue);
+  }
+
+  changeChain = (event, index, chainValue) => {
+    this.setState({collapseOnChange: false, chainValue: chainValue, chainChanged: true});
+    this.getUnits(chainValue);
+  }
 
   changeUnit = (event, index, unitValue) => this.setState({collapseOnChange:false, unitValue: unitValue, unitChanged: true});
   
@@ -855,7 +881,7 @@ class Admin extends React.Component {
                       <SelectField
                         style={styles.formElement}
                         value={this.state.chainValue}
-                        onChange={(event, index, chainValue) => this.setState({chainValue: chainValue, errorTextChain: ''})}
+                        onChange={this.selectChain}
                         floatingLabelText="Ketju"
                         floatingLabelFixed={true}
                         hintText="Valitse"
